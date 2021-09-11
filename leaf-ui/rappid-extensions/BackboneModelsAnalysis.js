@@ -132,6 +132,10 @@ var ConfigBBM = Backbone.Model.extend({
         }
         return null;
     },
+
+    deleteResults: function () {
+        this.get("results").forEach(result => result.destroy());
+    },
 });
 
 /**
@@ -165,5 +169,10 @@ var ConfigCollection = Backbone.Collection.extend({
      */
     unselectResults: function (changedConfig) {
         changedConfig.get('results').forEach(result => result.set('selected', false));
+    },
+
+    clearResults: function () {
+        this.forEach(model => model.deleteResults());
+        revertNodeValuesToInitial();
     },
 });
