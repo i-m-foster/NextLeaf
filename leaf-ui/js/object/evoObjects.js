@@ -371,11 +371,13 @@ class EVO {
                 }
                 // If result is unselected
                 else {
+                    console.log("hi")
                     curr.attr({ text: { fill: 'black', stroke: 'none' } });
                 }
             }
             // If a config without results is selected
             else {
+                console.log("hi")
                 curr.attr({ text: { fill: 'black', stroke: 'none' } });
             }
         }

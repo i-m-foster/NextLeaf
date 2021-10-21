@@ -257,7 +257,7 @@ $('#modeling-btn').on('click', function () { switchToModellingMode(); });
 graph.on("add", function (cell) {
     // Find how many cells are created on the graph
     var createdInstance = paper.findViewsInArea(paper.getArea())
-
+    console.log(cell)
     if (cell instanceof joint.shapes.basic.CellLink) {
         if (graph.getCell(cell.get("source").id) instanceof joint.shapes.basic.Actor) {
             cell.label(0, { attrs: { text: { text: "is-a" } } });
@@ -269,12 +269,13 @@ graph.on("add", function (cell) {
         // Creates an instance of a IntentionBBM from the cell
         var newIntentionBBM = new IntentionBBM({})
         cell.set('intention', newIntentionBBM);
-        cell.attr('.satvalue/text', '');
-        cell.attr('.funcvalue/text', ' ');
+    //    cell.attr('.satvalue/text', '');
+      //  cell.attr('.funcvalue/text', ' ');
         // Create intention evaluation object and add it to userEvaluationList 
         newIntentionBBM.get('userEvaluationList').push(new UserEvaluationBBM({}));
     } else if (cell instanceof joint.shapes.basic.Actor) {
-        // Find how many instances of the actor is created out of all the cells
+        //This is what is causing the Actor error
+      /*   // Find how many instances of the actor is created out of all the cells
         createdInstance = createdInstance.filter(view => view.model instanceof joint.shapes.basic.Actor);
         // Create placeholder name based on the number of instances
         var name;
@@ -306,9 +307,9 @@ graph.on("add", function (cell) {
         } else {
             name = cell.attr('.name/text') + "_0";
         }
-
+ */
         cell.set('actor', new ActorBBM({ actorName: name }));
-        cell.attr(".name/text", name);
+      //  cell.attr(".name/text", name);
 
         // Send actors to background so elements are placed on top
         cell.toBack();
@@ -962,6 +963,7 @@ function setInteraction(interactionValue) {
  * satisfaction value and colours all text to black
  */
 function revertNodeValuesToInitial(analysisResult) {
+    console.log("hi")
     var elements = graph.getElements();
     var curr;
     for (var i = 0; i < elements.length; i++) {

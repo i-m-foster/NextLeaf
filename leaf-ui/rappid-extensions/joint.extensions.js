@@ -82,6 +82,10 @@ joint.shapes.basic.Intention = joint.shapes.basic.Generic.extend({
                 'x-alignment': 'middle',
                 'y-alignment': 'middle'
             },
+           // "text": {
+             //   'fill': 'black', 
+               // 'stroke': 'none'
+            //}
         },
         intention: null,
     }, joint.dia.Element.prototype.defaults)
