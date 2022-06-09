@@ -1155,7 +1155,7 @@
     }
 
     /**
-     * This funtion should update the analysis request with the state that is currently selected
+     * This function should update the analysis request with the state that is currently selected
      */
     function updateAnalysisRequestWithCurrentState() {
         console.log('updateAnalysisRequestwithCurrentState');
