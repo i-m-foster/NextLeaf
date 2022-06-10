@@ -3,7 +3,7 @@ package layout;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.File;
+import java.io.File;∑
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,7 +25,7 @@ public class LMain {
 	    String inPath = "temp/";
 	    String outPath = "temp/";
 	    String tracePath = "";
-	    String inputFile = "Bike-lanes-out.json";
+	    String inputFile = "Bike lanes Before.json";
 	    String outputFile = "output.json";
 	
 	    try {			

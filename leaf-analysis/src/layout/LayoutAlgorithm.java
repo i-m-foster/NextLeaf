@@ -205,8 +205,8 @@ public class LayoutAlgorithm {
         center.setX(x);
         center.setY(y);
         //set the size of the canvas
-        center.setWidth(2*Math.abs(x1-x2));
-        center.setHeight(2*Math.abs(y1-y2));
+        center.setWidth(2 * Math.abs(x1 - x2));
+        center.setHeight(2 * Math.abs(y1 - y2));
         return center;
     }
 
