@@ -4,6 +4,10 @@ public class BISize {
 	Integer width;
 	Integer height;
 	
+	public BISize(Integer width, Integer height) {
+		this.width = width;
+		this.height = height;
+	}
 	public Integer getWidth() {
 		return width;
 	}

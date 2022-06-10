@@ -6,6 +6,11 @@ import gson_classes.BIPosition;
 public class VisualInfo {
 	BISize size;
 	BIPosition position;
+	
+	public VisualInfo(Integer width, Integer height, Double x, Double y) {
+		this.size = new BISize(width, height);
+		this.position = new BIPosition(x, y);
+	}
 
 	public VisualInfo(BISize size, BIPosition position) {
 		this.size = size;
@@ -49,11 +54,11 @@ public class VisualInfo {
 	}
 
 	public void setWidth(Integer width) {
-		this.width = width;
+		this.size.setWidth(width);
 	}
 
 	public void setHeight(Integer height) {
-		this.height = height;
+		this.size.setHeight(height);
 	}
 
 	public String toString() {
