@@ -108,7 +108,7 @@ public class LayoutAlgorithm {
 	 */
     public Actor resizeActor (Actor actor, VisualInfo[] intentions) {
         VisualInfo center = findCenter(intentions); 
-        Integer margin = 100; //space between the edge of intentions and the actor 
+        Integer margin = 50; //space between the edge of intentions and the actor 
         actor.setX(center.getX() - center.getWidth()/2 - margin);
         actor.setY(center.getY() - center.getHeight()/2 - margin);
         actor.setWidth(center.getWidth() + 2*margin);
@@ -253,8 +253,9 @@ public class LayoutAlgorithm {
         
         //constants
         double c = .0002; //adjustment -- the speed at which actors move
-        //TODO: solid peice wise function for c
-        if(nodePositions.length < 10) c = .002;
+        //TODO: solid piece wise function for c
+        if(nodePositions.length < 7 && nodePositions.length > 3) c = .0006;
+        else if(nodePositions.length < 4) c = .001;
         double a = .05; //error
         double constant = Math.pow(nodePositions.length, .5); // increasing the constant decreases attraction and gravitation, but increases repulsion
         
